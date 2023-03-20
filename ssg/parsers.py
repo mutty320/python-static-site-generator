@@ -18,14 +18,14 @@ class Parser:
 
     def read(self, path):
         with open(path, 'r') as file:
-            contents = f.read()
+            contents = file.read()
         return contents
 
     def write(self, path, dest, content, ext = ".html"):
         full_path = self.dest / path.with_suffix(ext).name
 
         with open(full_path, 'w') as file:
-            f.write(content)
+            file.write(content)
 
 class ResourceParser(Parser):
     extensions = [".jpg", ".png", ".gif", ".css", ".html"]
