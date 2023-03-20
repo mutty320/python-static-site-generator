@@ -6,9 +6,8 @@ class Parser:
     extensions: List[str] = []
 
     def valid_extension(self, extension):
-        for exten in self.extensions:
-            if exten == extension:
-                return True
+        return extension in self.extensions
+
     def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
 
@@ -18,8 +17,7 @@ class Parser:
 
     def read(self, path):
         with open(path, 'r') as file:
-            contents = file.read()
-        return contents
+            return file.read()
 
     def write(self, path, dest, content, ext = ".html"):
         full_path = dest / path.with_suffix(ext).name
