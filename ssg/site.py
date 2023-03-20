@@ -19,12 +19,12 @@ class Site:
             elif path.is_file():
                 self.run_parser(path)
 
-    def load_parser(extention):
+    def load_parser(self, extention):
         for parser in self.parsers:
             if parser.valid_extension(extention):
                 return parser
 
-    def run_parser(path):
+    def run_parser(self, path):
         parser = load_parser(path.suffix)
         if parser is not None:
             parser.parse(path, self.source, self.dest)
