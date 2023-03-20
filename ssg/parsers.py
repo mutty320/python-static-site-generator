@@ -9,25 +9,25 @@ class Parser:
         for exten in self.extentions:
             if exten == extention:
                 return True
-    def copy(path, source, dest):
+    def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
 
-    def parse(path: Path, source: Path, dest: Path):
+    def parse(self, path: Path, source: Path, dest: Path):
 
         raise NotImplementedError
 
-    def read(path):
-        with open(path, 'r') as f:
+    def read(self, path):
+        with open(path, 'r') as file:
             contents = f.read()
         return contents
 
-    def write(path, dest, content, ext = ".html"):
+    def write(self, path, dest, content, ext = ".html"):
         full_path = self.dest / path.with_suffix(ext).name
 
-        with open(full_path, 'w') as f:
+        with open(full_path, 'w') as file:
             f.write(content)
 
 class ResourceParser(Parser):
     extensions = [".jpg", ".png", ".gif", ".css", ".html"]
-    def parse(path: Path, source: Path, dest: Path):
+    def parse(self, path: Path, source: Path, dest: Path):
         super().copy(path, source, dest)
