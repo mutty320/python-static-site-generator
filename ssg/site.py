@@ -19,9 +19,9 @@ class Site:
             elif path.is_file():
                 self.run_parser(path)
 
-    def load_parser(self, extention):
+    def load_parser(self, extension):
         for parser in self.parsers:
-            if parser.valid_extension(extention):
+            if parser.valid_extension(extension):
                 return parser
 
     def run_parser(self, path):

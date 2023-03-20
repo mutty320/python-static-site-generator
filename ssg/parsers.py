@@ -3,11 +3,11 @@ from typing import List
 from pathlib import Path
 
 class Parser:
-    extentions: List[str] = []
+    extensions: List[str] = []
 
-    def valid_extension(self, extention):
-        for exten in self.extentions:
-            if exten == extention:
+    def valid_extension(self, extension):
+        for exten in self.extensions:
+            if exten == extension:
                 return True
     def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
