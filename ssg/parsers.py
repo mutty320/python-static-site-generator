@@ -1,4 +1,6 @@
-from typing import List, Path from pathlib, shutil
+import shutil
+from typing import List
+from pathlib import Path
 
 class Parser:
     extentions: List[str] = []
