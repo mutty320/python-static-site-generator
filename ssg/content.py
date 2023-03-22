@@ -6,7 +6,7 @@ from collections.abc import Mapping
 
 class Content(Mapping):
 
-    __delimeter = "^(?:-|\+){3}\s*$"
+    __delimeter = r"^(?:-|\+){3}\s*$"
     __regex = re.compile(self.__delimeter, re.MULTILINE)
 
     @classmethod
