@@ -1,5 +1,6 @@
 import re
-import load FullLoader from yaml
+
+from yaml import load, FullLoader
 from collections.abc import Mapping
 
 
