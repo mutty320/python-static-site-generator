@@ -1,6 +1,6 @@
 import re
 import load FullLoader from yaml
-from collection.abc import Mapping
+from collections.abc import Mapping
 
 
 class Content(Mapping):
@@ -18,5 +18,3 @@ class Content(Mapping):
 
     def __init__(self, yaml, content):
         self.data = yaml
-
-        
