@@ -1,7 +1,8 @@
 import shutil
-from docutils import sys, publish_parts
+import sys
+from docutils.core import publish_parts
 from markdown import markdown
-from Content import ssg.content
+from ssg.content import Content
 from typing  import List
 from pathlib import Path
 
@@ -50,5 +51,21 @@ class ReStructeredTextParser():
 
         html = publish_parts(content.body, writer_name = "html15")
         self.write(path, dest, html["html_body"])
+
+        sys.stdout.write(
+        "\x1b[1;32m{} converted to HTML. Metadata: {}\n").format(path.name, content)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
