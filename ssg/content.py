@@ -20,6 +20,9 @@ class Content(Mapping):
     def __init__(self, metadata, content):
         self.data = metadata
         self.data["content"] = content
+    @property
+    def body(self):
+        return self.data["content"]
 
     @property
     def type(self):
@@ -40,7 +43,7 @@ class Content(Mapping):
 
     def __repr__(self):
         data = {}
-        for key, value in self.data.itemes():
+        for key, value in self.data.items():
             if key != "content":
                 data[key] = value
 
